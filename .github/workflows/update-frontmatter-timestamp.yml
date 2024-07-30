@@ -17,7 +17,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
-          fetch-depth: 2
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -31,11 +30,18 @@ jobs:
 
       - name: Check for Markdown files
         run: |
-              if git diff --name-only HEAD^ HEAD | grep -q '\.md$'; then
-                node .github/scripts/update-frontmatter.js
+              echo "Checking for markdown files..."
+              markdown_changed=false
+
+              for path in $(git diff-tree --no-commit-id --name-only -r HEAD | grep -q '\.md$');  
+              do 
+                node .github/scripts/update-frontmatter.js path
+                markdown_changed=true
+              done
+
+              if [ "$markdown_changed" = true ]; then
                 echo 'markdown_changed=true' >> $GITHUB_ENV
               else
-                echo 'no md file'
                 echo 'markdown_changed=false' >> $GITHUB_ENV
               fi
 

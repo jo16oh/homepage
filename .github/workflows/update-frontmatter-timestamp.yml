@@ -24,7 +24,9 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm i -g gray-matter
+        run: |
+          npm i gray-matter
+          npm i @types:node
 
       - name: Check for Markdown files
         run: |

@@ -35,6 +35,7 @@ jobs:
 
               for path in $(git diff-tree --no-commit-id --name-only -r HEAD | grep -q '\.md$');  
               do 
+                echo "$path"
                 node .github/scripts/update-frontmatter.js "$path"
                 markdown_changed=true
               done

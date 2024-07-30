@@ -34,8 +34,6 @@ jobs:
               echo "Checking for markdown files..."
               markdown_changed=false
 
-              git diff-tree --no-commit-id --name-only -r HEAD | grep -q '\.md$' | echo
-
               for path in $(git diff-tree --no-commit-id --name-only -r HEAD | grep -q '\.md$');  
               do 
                 echo "$path"

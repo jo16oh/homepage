@@ -27,6 +27,15 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Setup git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Get current branch name
+        id: get_branch
+        run: echo "::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/})"
+
       - name: Install dependencies
         run: |
           npm i gray-matter
@@ -48,6 +57,6 @@ jobs:
           git add .
           git status
           git commit -m 'bot: update frontmatter timestamp' || echo "No changes to commit"
-          git push
+          git push origin HEAD:${{ steps.get_branch.outputs.branch }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -24,7 +24,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm i -g gray-matter
+        run: npm i gray-matter
 
       - name: Check for Markdown files
         run: |
@@ -36,7 +36,9 @@ jobs:
             DIFF_FILES=$(git diff --name-only HEAD^ HEAD)
           fi
 
+          echo "Changed files:"
           echo "$DIFF_FILES"
+          
           if echo "$DIFF_FILES" | grep -q '\.md$'; then
             echo "Markdown files changed"
             node .github/scripts/update-frontmatter.js

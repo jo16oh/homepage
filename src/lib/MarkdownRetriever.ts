@@ -2,7 +2,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import matter from 'gray-matter';
 
-type MarkdownDocument = {
+export type MarkdownDocument = {
 	fileName: string;
 	created_at: Date;
 	updated_at: Date;

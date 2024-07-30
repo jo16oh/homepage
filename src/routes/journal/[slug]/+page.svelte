@@ -1,8 +1,13 @@
-<script lang='ts'>
-	/** @type {import('./$types').PageData} */
-	let { data } = $props();
+<script lang="ts">
+	import { marked } from 'marked';
+	import type { MarkdownDocument } from '$lib/MarkdownRetriever';
+	let { data }: { data: { doc: MarkdownDocument } } = $props();
+
+	const html = marked.parse(data.doc.content);
 </script>
 
-{ data.slug }
+<h1 class="text-white text-2xl font-bold font-heading">
+	{data.doc.fileName}
+</h1>
 
-
+<div>{@html html}</div>

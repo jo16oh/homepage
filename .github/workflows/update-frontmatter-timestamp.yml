@@ -57,6 +57,6 @@ jobs:
           git add .
           git status
           git commit -m 'bot: update frontmatter timestamp' || echo "No changes to commit"
-          git push origin HEAD:${{ steps.get_branch.outputs.branch }}
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

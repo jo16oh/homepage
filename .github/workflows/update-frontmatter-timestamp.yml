@@ -26,8 +26,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm i -g gray-matter
-          npm i -g @types/node
+          npm i gray-matter
+          npm i @types/node
 
       - name: Check for Markdown files
         run: |

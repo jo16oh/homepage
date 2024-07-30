@@ -31,7 +31,6 @@ jobs:
 
       - name: Check for Markdown files
         run: |
-          if [ $(git rev-parse --is-inside-work-tree) ]; then
             if [ $(git rev-list --count HEAD) -gt 1 ]; then
               if git diff --name-only HEAD^ HEAD | grep -q '\.md$'; then
                 node .github/scripts/update-frontmatter.js
@@ -44,10 +43,6 @@ jobs:
               echo 'rev-list 0'
               echo 'markdown_changed=false' >> $GITHUB_ENV
             fi
-          else
-            echo 'not inside worktree'
-            echo 'markdown_changed=false' >> $GITHUB_ENV
-          fi
 
       - name: Commit and push changes
         if: env.markdown_changed == 'true'

@@ -31,7 +31,7 @@ jobs:
           echo "Checking for markdown files..."
           if [ $(git rev-list --count HEAD) -eq 1 ]; then
             echo "Only one commit in the repository"
-            DIFF_FILES=$(git diff --name-only HEAD)
+            DIFF_FILES=$(git ls-files '*.md')
           else
             DIFF_FILES=$(git diff --name-only HEAD^ HEAD)
           fi

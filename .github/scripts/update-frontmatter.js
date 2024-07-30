@@ -22,6 +22,7 @@ fs.readdir(directoryPath, (err, files) => {
 			const currentDate = new Date().toISOString();
 
 			// Set the created_at field if it doesn't exist
+			console.log(parsedContent.data.created_at)
 			if (!parsedContent.data.created_at) {
 				parsedContent.data.created_at = currentDate;
 			}

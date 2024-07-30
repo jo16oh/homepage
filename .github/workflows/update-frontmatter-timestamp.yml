@@ -3,6 +3,8 @@ name: Update timestamps in the frontmatter of markdown documents
 on:
   pull_request:
     types: [closed]
+    branches:
+      - main
 
 permissions:
   contents: write

@@ -32,7 +32,7 @@ jobs:
       - name: Check for Markdown files
         run: |
               for path in $(git diff --name-only HEAD^ HEAD | grep '\.md$'); do
-                node .github/scripts/update-frontmatter.js path
+                node .github/scripts/update-frontmatter.js "$path"
                 echo 'markdown_changed=true' >> $GITHUB_ENV
               done
 

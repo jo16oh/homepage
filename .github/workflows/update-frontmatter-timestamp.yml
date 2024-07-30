@@ -31,19 +31,11 @@ jobs:
 
       - name: Check for Markdown files
         run: |
-              echo "Checking for markdown files..."
-              markdown_changed=false
-
-              for path in $(git diff-tree --no-commit-id --name-only -r HEAD | grep -q '\.md$');  
-              do 
-                echo "$path"
-                node .github/scripts/update-frontmatter.js "$path"
-                markdown_changed=true
-              done
-
-              if [ "$markdown_changed" = true ]; then
+              if git diff --name-only HEAD^ HEAD | grep -q '\.md$'; then
+                node .github/scripts/update-frontmatter.js
                 echo 'markdown_changed=true' >> $GITHUB_ENV
               else
+                echo 'no md file'
                 echo 'markdown_changed=false' >> $GITHUB_ENV
               fi
 

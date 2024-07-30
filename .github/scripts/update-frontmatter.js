@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const directoryPath = path.join(__dirname, '../assets/journal');
+const directoryPath = path.join(__dirname, '../../assets/journal');
 
 fs.readdir(directoryPath, (err, files) => {
 	if (err) {

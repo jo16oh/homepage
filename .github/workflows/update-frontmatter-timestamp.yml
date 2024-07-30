@@ -45,7 +45,7 @@ jobs:
       - name: Check for Markdown files
         run: |
           markdown_changed=false
-          for path in $(git diff --name-only HEAD^ HEAD | grep '\.md$'); do
+          for path in $(git diff --name-only --diff-filter=d HEAD^ HEAD | grep '\.md$'); do
             node .github/scripts/update-frontmatter.js "$path"
             markdown_changed=true
           done

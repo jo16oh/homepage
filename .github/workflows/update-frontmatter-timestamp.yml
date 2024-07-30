@@ -24,22 +24,22 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm i gray-matter
+        run: npm i -g gray-matter
 
       - name: Check for Markdown files
         run: |
           echo "Checking for markdown files..."
           if [ $(git rev-list --count HEAD) -eq 1 ]; then
             echo "Only one commit in the repository"
-            DIFF_FILES=$(git ls-files '*.md')
+            DIFF_FILES=$(git ls-tree -r HEAD --name-only | grep '\.md$')
           else
-            DIFF_FILES=$(git diff --name-only HEAD^ HEAD)
+            DIFF_FILES=$(git diff --name-only HEAD^ HEAD | grep '\.md$')
           fi
 
           echo "Changed files:"
           echo "$DIFF_FILES"
           
-          if echo "$DIFF_FILES" | grep -q '\.md$'; then
+          if [ -n "$DIFF_FILES" ]; then
             echo "Markdown files changed"
             node .github/scripts/update-frontmatter.js
             echo 'markdown_changed=true' >> $GITHUB_ENV

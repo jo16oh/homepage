@@ -3,7 +3,7 @@ name: Update timestamps in the frontmatter of markdown documents
 on:
   push:
     branches:
-      - main
+      - develop
 
 permissions:
   contents: write

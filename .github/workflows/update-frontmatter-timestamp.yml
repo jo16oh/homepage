@@ -1,8 +1,11 @@
 name: Update timestamps in the frontmatter of markdown documents
 
 on:
-  push:
-    ignore-branches:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
       - main
 
 permissions:
@@ -31,10 +34,10 @@ jobs:
 
       - name: Check for Markdown files
         run: |
-              for path in $(git diff --name-only HEAD^ HEAD | grep '\.md$'); do
-                node .github/scripts/update-frontmatter.js "$path"
-                echo 'markdown_changed=true' >> $GITHUB_ENV
-              done
+          for path in $(git diff --name-only HEAD^ HEAD | grep '\.md$'); do
+            node .github/scripts/update-frontmatter.js "$path"
+            echo 'markdown_changed=true' >> $GITHUB_ENV
+          done
 
       - name: Commit and push changes
         if: env.markdown_changed == 'true'

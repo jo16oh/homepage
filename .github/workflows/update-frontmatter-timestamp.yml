@@ -21,6 +21,7 @@ jobs:
         with:
           persist-credentials: true
           fetch-depth: 2
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -57,6 +58,6 @@ jobs:
           git add .
           git status
           git commit -m 'bot: update frontmatter timestamp' || echo "No changes to commit"
-          git push origin HEAD:${{ github.event.pull_request.head.ref }}
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

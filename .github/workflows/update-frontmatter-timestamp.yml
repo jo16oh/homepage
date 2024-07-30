@@ -44,10 +44,12 @@ jobs:
 
       - name: Check for Markdown files
         run: |
+          markdown_changed=false
           for path in $(git diff --name-only HEAD^ HEAD | grep '\.md$'); do
             node .github/scripts/update-frontmatter.js "$path"
-            echo 'markdown_changed=true' >> $GITHUB_ENV
+            markdown_changed=true
           done
+          echo "markdown_changed=$markdown_changed" >> $GITHUB_ENV
 
       - name: Commit and push changes
         if: env.markdown_changed == 'true'

@@ -10,10 +10,12 @@ const parsedContent = matter(fileContent);
 
 const currentDate = new Date().toISOString();
 
+// Set the created_at field if it doesn't exist
 if (!parsedContent.data.created_at) {
 	parsedContent.data.created_at = currentDate;
 }
 
+// Update the updated_at field
 parsedContent.data.updated_at = currentDate;
 
 const updatedContent = matter.stringify(parsedContent.content, parsedContent.data);

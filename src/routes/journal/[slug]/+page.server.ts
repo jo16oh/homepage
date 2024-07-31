@@ -1,4 +1,5 @@
 import { MarkdownRetriever } from '$lib/MarkdownRetriever';
+import { parse } from '$lib/parseMarkdown';
 /** @type {import('./$types').EntryGenerator} */
 export function entries() {
 	const entries = Array.from(MarkdownRetriever.journal)
@@ -19,6 +20,7 @@ export async function load({ params }: { params: { slug: string } }) {
 	return {
 		doc: {
 			...doc
-		}
+		},
+		html: parse(doc.content)
 	};
 }

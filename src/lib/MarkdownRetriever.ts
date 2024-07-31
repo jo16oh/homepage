@@ -4,10 +4,14 @@ import matter from 'gray-matter';
 
 export type MarkdownDocument = {
 	fileName: string;
+	title: string;
 	created_at: Date;
 	updated_at: Date;
 	prev: string | null;
 	next: string | null;
+	frontmatter: {
+		[key: string]: string;
+	};
 	content: string;
 };
 
@@ -23,11 +27,18 @@ const journals: MarkdownDocument[] = fs
 		const doc = matter(data);
 
 		if (!doc.data.created_at || !doc.data.updated_at) throw new Error('timestamp not found!');
+		const fileName = file.slice(0, file.length - 3);
+
+		const { title, created_at, updated_at, ...metadata } = doc.data;
 
 		return {
-			fileName: file.slice(0, file.length - 3),
+			fileName: fileName,
+			title: fileName,
 			created_at: new Date(doc.data.created_at as string),
 			updated_at: new Date(doc.data.updated_at as string),
+			frontmatter: {
+				...metadata
+			},
 			content: doc.content
 		};
 	})
@@ -49,11 +60,18 @@ const blogs: MarkdownDocument[] = fs
 		const doc = matter(data);
 
 		if (!doc.data.created_at || !doc.data.updated_at) throw new Error('timestamp not found!');
+		if (!doc.data.tite) throw new Error('no title specified!');
+
+		const { title, created_at, updated_at, ...metadata } = doc.data;
 
 		return {
 			fileName: file.slice(0, file.length - 3),
+			title: doc.data.title,
 			created_at: new Date(doc.data.created_at as string),
 			updated_at: new Date(doc.data.updated_at as string),
+			frontmatter: {
+				...metadata
+			},
 			content: doc.content
 		};
 	})

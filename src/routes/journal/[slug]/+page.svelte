@@ -32,8 +32,8 @@
 
 <div class="h-32 w-full"></div>
 
-<div class=" flex flex-wrap content-center items-center justify-between gap-5 self-stretch">
-	<div class="flex-[1 0 0] flex min-w-[225px] justify-start gap-[9px]">
+<div class="flex w-full flex-row flex-wrap">
+	<div class="flex-[1 0 0] mr-auto flex min-w-[225px] justify-start gap-[9px]">
 		{#if data.doc.prev}
 			<a
 				href={'/journal/' + data.doc.prev}
@@ -49,7 +49,7 @@
 		{/if}
 	</div>
 
-	<div class="flex-[1 0 0] flex min-w-[225px] justify-end gap-[9px]">
+	<div class="flex-[1 0 0] ml-auto flex min-w-[225px] justify-end gap-[9px]">
 		{#if data.doc.next}
 			<a
 				href={'/journal/' + data.doc.next}

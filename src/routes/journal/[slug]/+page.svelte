@@ -10,6 +10,16 @@
 	main={data.doc.content}
 />
 
+<div
+	class="fixed left-0 top-0 flex h-10 w-full flex-row justify-between opacity-60 max-[720px]:bg-[url('/bg-dark.jpg')]"
+></div>
+<a href="/journal" class="fixed left-0 top-0 hover:bg-gray-500/40">
+	<img src="/back.svg" alt="back" /></a
+>
+<a href="/" class="fixed right-0 top-0 hover:bg-gray-500/40">
+	<img src="/search.svg" alt="search" /></a
+>
+
 <h1 class="font-heading text-3xl font-bold text-white">
 	{data.doc.fileName}
 </h1>

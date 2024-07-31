@@ -11,6 +11,5 @@ marked.use({
 });
 
 export function parse(md: string): string {
-	console.log(md);
 	return marked.parse(md) as string;
 }

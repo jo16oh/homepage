@@ -1,13 +1,14 @@
 <script>
 	const paths = ['blog', 'journal', 'photography', 'about'];
 	const style =
-		'text-xl text-white font-heading font-bold hover:bg-gray-500/40 inline-block w-auto m-0';
+		'text-2xl text-white font-heading font-bold hover:bg-gray-500/40 transition inline-block w-auto m-0';
 </script>
 
-<h1 class="h-[58px] p-[8px] font-heading text-2xl text-white font-bold">jo16oh.dev</h1>
-<div class="h-[50px]"></div>
-<div class="grid grid-cols-1 pl-[40px] gap-[20px]">
+<h1 class="h-[58px] p-[8px] font-heading text-3xl font-bold text-white">jo16oh.dev</h1>
+<div class="h-[70px]"></div>
+<div class="grid grid-cols-1 gap-[30px] pl-[40px]">
 	{#each paths as path}
 		<a href={'/' + path} class={style}>{path}</a>
 	{/each}
+	<button class="transition hover:bg-gray-500/40"> <img src="/search.svg" alt="search" /></button>
 </div>

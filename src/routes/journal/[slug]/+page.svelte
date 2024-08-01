@@ -35,7 +35,7 @@
 		{#if data.doc.prev}
 			<a
 				href={'/journal/' + data.doc.prev}
-				class="flex h-full p-2 font-heading text-sm leading-5 text-white hover:bg-gray-500/40"
+				class="flex h-full p-2 font-heading text-sm leading-5 text-white transition hover:bg-gray-500/40"
 			>
 				<img
 					src="/white-cube.svg"
@@ -51,7 +51,7 @@
 		{#if data.doc.next}
 			<a
 				href={'/journal/' + data.doc.next}
-				class="items-right flex h-full p-2 font-heading text-sm leading-5 text-white hover:bg-gray-500/40"
+				class="items-right flex h-full p-2 font-heading text-sm leading-5 text-white transition hover:bg-gray-500/40"
 			>
 				{data.doc.next}
 				<img

@@ -1,14 +1,9 @@
 <script lang="ts">
 	import type { MarkdownDocument } from '$lib/MarkdownRetriever';
-	import LoadWebFonts from '$lib/LoadWebFonts.svelte';
 
 	let { data }: { data: { doc: MarkdownDocument; html: string } } = $props();
 </script>
 
-<LoadWebFonts
-	heading={Object.entries(data.doc.frontmatter).join('') + data.doc.title}
-	main={data.doc.content}
-/>
 
 <div
 	class="fixed left-0 top-0 flex h-10 w-full flex-row justify-between opacity-60 max-[720px]:bg-[url('/bg-dark.jpg')]"

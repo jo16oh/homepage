@@ -8,9 +8,35 @@ export default {
 				black: '#242424'
 			},
 			fontFamily: {
-				main: ['Noto Sans Japanese', 'sans-serif'],
-				heading: ['Courier', 'Courier Prime', 'Sawarabi Gothic', 'monospace'],
-				'heading-light': ['Courier Prime', 'Sawarabi Gothic', 'monospace']
+				main: [
+					'sans-serif',
+					'YuGothic',
+					'Yu Gothic',
+					'Hiragino Kaku Gothic ProN',
+					'ヒラギノ角ゴ ProN W3',
+					'ＭＳ ゴシック',
+					'sans-serif'
+				],
+				heading: [
+					'Courier',
+					'Courier New',
+					'YuGothic',
+					'Yu Gothic',
+					'Hiragino Kaku Gothic ProN',
+					'ヒラギノ角ゴ ProN W3',
+					'ＭＳ ゴシック',
+					'monospace'
+				],
+				'heading-light': [
+					'Courier',
+					'Courier New',
+					'YuGothic',
+					'Yu Gothic',
+					'Hiragino Kaku Gothic ProN',
+					'ヒラギノ角ゴ ProN W3',
+					'ＭＳ ゴシック',
+					'monospace'
+				]
 			}
 		}
 	},

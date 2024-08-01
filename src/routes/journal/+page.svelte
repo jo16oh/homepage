@@ -13,7 +13,7 @@
 	} = $props();
 </script>
 
-<h1 class="font-heading text-3xl font-bold text-white">journal</h1>
+<h1 class="h-14 p-2 font-heading text-3xl font-bold text-white">journal</h1>
 
 <div class="h-32"></div>
 

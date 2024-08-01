@@ -60,7 +60,7 @@ const blogs: MarkdownDocument[] = fs
 		const doc = matter(data);
 
 		if (!doc.data.created_at || !doc.data.updated_at) throw new Error('timestamp not found!');
-		if (!doc.data.tite) throw new Error('no title specified!');
+		if (!doc.data.title) throw new Error('no title specified!');
 
 		const { title, created_at, updated_at, ...metadata } = doc.data;
 

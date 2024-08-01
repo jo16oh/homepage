@@ -4,6 +4,9 @@
 	let { data }: { data: { doc: MarkdownDocument; html: string } } = $props();
 </script>
 
+<svelte:head>
+	<title>{data.doc.title}</title>
+</svelte:head>
 
 <h1 class="font-heading text-3xl font-bold text-white">
 	{data.doc.fileName}

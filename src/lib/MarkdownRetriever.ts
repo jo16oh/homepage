@@ -100,3 +100,54 @@ export const MarkdownRetriever: MarkdownRetriever = {
 	blog: blogMap,
 	journal: journalMap
 };
+
+export const journalListDesc = groupByMonth(journals);
+
+function groupByMonth(docs: MarkdownDocument[]): { month: string; docs: MarkdownDocument[] }[] {
+	const grouped: { [key: string]: MarkdownDocument[] } = {};
+
+	docs.forEach((obj) => {
+		const month =
+			obj.created_at.getFullYear() +
+			'-' +
+			(obj.created_at.getMonth() + 1).toString().padStart(2, '0');
+
+		if (!grouped[month]) {
+			grouped[month] = [];
+		}
+
+		grouped[month].push(obj);
+	});
+
+	// オブジェクトを配列に変換
+	const groupedArray: { month: string; docs: MarkdownDocument[] }[] = Object.keys(grouped)
+		.map((month) => {
+			return {
+				month,
+				docs: grouped[month]
+			};
+		})
+		.map((i) => {
+			const docs = i.docs.sort((a, b) => b.created_at.getTime() - a.created_at.getTime());
+
+			return {
+				month: i.month,
+				docs
+			};
+		});
+
+	// 月ごとに降順にソート
+	groupedArray.sort((a, b) => b.month.localeCompare(a.month));
+
+	return groupedArray.map((i) => {
+		const date = new Date(`${i.month}-01`);
+		const options = { year: 'numeric', month: 'long' };
+		const formatter = new Intl.DateTimeFormat('en-US', options);
+		const formatted = formatter.format(date).split(' ').join(', ');
+
+		return {
+			month: formatted,
+			docs: i.docs
+		};
+	});
+}

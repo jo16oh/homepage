@@ -15,9 +15,14 @@ export type MarkdownDocument = {
 	content: string;
 };
 
+export type Journal = MarkdownDocument;
+
+export type BlogPost = MarkdownDocument & {
+	tags: string[];
+};
 type MarkdownRetriever = {
-	journal: Map<string, MarkdownDocument>;
-	blog: Map<string, MarkdownDocument>;
+	journal: Map<string, Journal>;
+	blog: Map<string, BlogPost>;
 };
 
 const journals: MarkdownDocument[] = fs
@@ -53,7 +58,7 @@ const journals: MarkdownDocument[] = fs
 		};
 	});
 
-const blogs: MarkdownDocument[] = fs
+const blogs: BlogPost[] = fs
 	.readdirSync('assets/blog')
 	.map((file) => {
 		const data = fs.readFileSync(path.resolve('assets/blog', file), 'utf8');
@@ -62,7 +67,9 @@ const blogs: MarkdownDocument[] = fs
 		if (!doc.data.created_at || !doc.data.updated_at) throw new Error('timestamp not found!');
 		if (!doc.data.title) throw new Error('no title specified!');
 
-		const { title, created_at, updated_at, ...metadata } = doc.data;
+		const { title, created_at, updated_at, tags, ...metadata } = doc.data;
+
+		if (!tags && !Array.isArray(tags)) throw new Error('tags should be an array of strings');
 
 		return {
 			fileName: file.slice(0, file.length - 3),
@@ -72,7 +79,8 @@ const blogs: MarkdownDocument[] = fs
 			frontmatter: {
 				...metadata
 			},
-			content: doc.content
+			content: doc.content,
+			tags: tags || []
 		};
 	})
 	.sort((a, b) => a.created_at.getTime() - b.created_at.getTime())
@@ -86,7 +94,7 @@ const blogs: MarkdownDocument[] = fs
 		};
 	});
 
-const blogMap = new Map<string, MarkdownDocument>();
+const blogMap = new Map<string, BlogPost>();
 for (const i of blogs) {
 	blogMap.set(i.fileName, i);
 }

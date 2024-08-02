@@ -1,8 +1,14 @@
 ---
 title: test
-created_at: 2024-08-01
-updated_at: 2024-08-01
-tags: [simple, clean, cheap, 早い, 安い, 美味い]
+created_at: 2024-08-01T00:00:00.000Z
+updated_at: '2024-08-02T13:31:44.488Z'
+tags:
+  - simple
+  - clean
+  - cheap
+  - 早い
+  - 安い
+  - 美味い
 備考: 楽しく生きよう
 天気: 晴れ
 ---

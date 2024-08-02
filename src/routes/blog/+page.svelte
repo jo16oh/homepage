@@ -2,7 +2,6 @@
 	import type { BlogPost } from '$lib/MarkdownRetriever';
 
 	let { data }: { data: { blogs: BlogPost[] } } = $props();
-	console.log(data);
 </script>
 
 <h1 class="h-14 p-2 font-heading text-3xl font-bold text-white">blog</h1>

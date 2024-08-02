@@ -11,7 +11,7 @@
 {#each data.entries as entry}
 	<div>
 			<a
-				href={'journal/' + entry}
+				href={'/blog/' + entry}
 				class="ml-6 flex h-full w-fit p-2 font-heading text-lg leading-5 text-white transition hover:bg-gray-500/40"
 			>
 				<img

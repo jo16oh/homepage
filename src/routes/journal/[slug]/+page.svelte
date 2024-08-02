@@ -37,11 +37,9 @@
 				href={'/journal/' + data.doc.prev}
 				class="flex h-full p-2 font-heading text-sm leading-5 text-white transition hover:bg-gray-500/40"
 			>
-				<img
-					src="/white-cube.svg"
-					alt="next article"
-					class="inline pl-[9px] pr-[12px] align-middle"
-				/>
+				<div class="inline-block h-full w-6 pl-[9px] pr-[12px]">
+					<img src="/white-cube.svg" alt="next article" class="inline align-middle" />
+				</div>
 				{data.doc.prev}</a
 			>
 		{/if}
@@ -54,11 +52,9 @@
 				class="items-right flex h-full p-2 font-heading text-sm leading-5 text-white transition hover:bg-gray-500/40"
 			>
 				{data.doc.next}
-				<img
-					src="/white-cube.svg"
-					alt="next article"
-					class="inline pl-[12px] pr-[9px] align-middle"
-				/>
+				<div class="inline-block h-full w-6 pl-[12px] pr-[9px]">
+					<img src="/white-cube.svg" alt="next article" class="inline align-middle" />
+				</div>
 			</a>
 		{/if}
 	</div>

@@ -1,10 +1,12 @@
 <script>
 	import '../app.css';
+	import Header from '$lib/Components/Header.svelte';
 </script>
 
-<div class="flex flex-col justify-center items-center w-full">
-	<div class="h-[146px] w-full"></div>
-	<div class="w-full max-w-[460px] flex flex-col justify-start items-start px-[5px] mx-auto">
+<Header />
+
+<div class="flex w-full flex-col items-center justify-center py-36">
+	<div class="mx-auto flex w-full max-w-[660px] flex-col items-start justify-start px-1">
 		<slot></slot>
 	</div>
 </div>

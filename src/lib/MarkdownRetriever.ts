@@ -23,6 +23,7 @@ export type BlogPost = MarkdownDocument & {
 type MarkdownRetriever = {
 	journal: Map<string, Journal>;
 	blog: Map<string, BlogPost>;
+	tags: Map<string, string[]>;
 };
 
 const journals: MarkdownDocument[] = fs
@@ -95,21 +96,42 @@ const blogs: BlogPost[] = fs
 	});
 
 const blogMap = new Map<string, BlogPost>();
+
 for (const i of blogs) {
 	blogMap.set(i.fileName, i);
 }
 
 const journalMap = new Map<string, MarkdownDocument>();
+
 for (const i of journals) {
 	journalMap.set(i.fileName, i);
 }
 
+const tags: Map<string, string[]> = (() => {
+	const tags: { [key: string]: string[] } = {};
+
+	for (const blog of blogs) {
+		blog.tags.forEach((tag) => {
+			if (tag in tags) {
+				tags[tag].push(blog.fileName);
+			} else {
+				tags[tag] = [blog.fileName];
+			}
+		});
+	}
+
+	return new Map(Object.entries(tags));
+})();
+
 export const MarkdownRetriever: MarkdownRetriever = {
 	blog: blogMap,
-	journal: journalMap
+	journal: journalMap,
+	tags: tags
 };
 
 export const journalListDesc = groupByMonth(journals);
+
+export const blogList = blogs;
 
 function groupByMonth(docs: MarkdownDocument[]): { month: string; docs: MarkdownDocument[] }[] {
 	const grouped: { [key: string]: MarkdownDocument[] } = {};

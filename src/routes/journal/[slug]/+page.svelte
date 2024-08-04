@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { MarkdownDocument } from '$lib/MarkdownRetriever';
+	import BottomNav from '$lib/Components/BottomNav.svelte';
 
 	let { data }: { data: { doc: MarkdownDocument; html: string } } = $props();
 </script>
@@ -30,32 +31,4 @@
 
 <div class="h-32 w-full"></div>
 
-<div class="flex w-full flex-row flex-wrap">
-	<div class="flex-[1 0 0] mr-auto flex min-w-[225px] justify-start gap-[9px]">
-		{#if data.doc.prev}
-			<a
-				href={'/journal/' + data.doc.prev}
-				class="flex h-full p-2 font-heading text-sm leading-5 text-white transition hover:bg-gray-500/40"
-			>
-				<div class="inline-block h-full w-6 pl-[9px] pr-[12px]">
-					<img src="/white-cube.svg" alt="next article" class="inline align-middle" />
-				</div>
-				{data.doc.prev}</a
-			>
-		{/if}
-	</div>
-
-	<div class="flex-[1 0 0] ml-auto flex min-w-[225px] justify-end gap-[9px]">
-		{#if data.doc.next}
-			<a
-				href={'/journal/' + data.doc.next}
-				class="items-right flex h-full p-2 font-heading text-sm leading-5 text-white transition hover:bg-gray-500/40"
-			>
-				{data.doc.next}
-				<div class="inline-block h-full w-6 pl-[12px] pr-[9px]">
-					<img src="/white-cube.svg" alt="next article" class="inline align-middle" />
-				</div>
-			</a>
-		{/if}
-	</div>
-</div>
+<BottomNav prev={data.doc.prev} next={data.doc.next} />

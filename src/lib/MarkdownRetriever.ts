@@ -7,8 +7,14 @@ export type MarkdownDocument = {
 	title: string;
 	created_at: Date;
 	updated_at: Date;
-	prev: string | null;
-	next: string | null;
+	prev?: {
+		title: string;
+		path: string;
+	};
+	next?: {
+		title: string;
+		path: string;
+	};
 	frontmatter: {
 		[key: string]: string;
 	};
@@ -50,12 +56,22 @@ const journals: MarkdownDocument[] = fs
 	})
 	.sort((a, b) => a.created_at.getTime() - b.created_at.getTime())
 	.map((e, index, array) => {
-		const prev = array[index - 1]?.fileName || null;
-		const next = array[index + 1]?.fileName || null;
+		const prev = array[index - 1];
+		const next = array[index + 1];
 		return {
 			...e,
-			prev: prev,
+			prev: prev
+				? {
+						path: '/journal/' + prev.fileName,
+						title: prev.title
+					}
+				: null,
 			next: next
+				? {
+						path: '/journal/' + next.fileName,
+						title: next.title
+					}
+				: null
 		};
 	});
 
@@ -86,12 +102,22 @@ const blogs: BlogPost[] = fs
 	})
 	.sort((a, b) => a.created_at.getTime() - b.created_at.getTime())
 	.map((e, index, array) => {
-		const prev = array[index - 1]?.fileName || null;
-		const next = array[index + 1]?.fileName || null;
+		const prev = array[index - 1];
+		const next = array[index + 1];
 		return {
 			...e,
-			prev: prev,
+			prev: prev
+				? {
+						path: '/blog/' + prev.fileName,
+						title: prev.title
+					}
+				: undefined,
 			next: next
+				? {
+						path: '/blog/' + next.fileName,
+						title: next.title
+					}
+				: undefined
 		};
 	});
 

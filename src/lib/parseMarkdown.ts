@@ -27,7 +27,7 @@ const extension: MarkedExtension = {
     },
     paragraph(token) {
       const text = this.parser.parseInline(token.tokens);
-      return `<p class='text-white text-base leading-7 font-main pb-5 break-words text-justify'>${text}</p>`;
+      return `<p class='text-white text-base leading-7 font-main pb-5 '>${text}</p>`;
     },
     link(token) {
       return `<a href=${token.href} class="text-sky-300 hover:underline">${token.text}</a>`;

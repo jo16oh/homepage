@@ -1,4 +1,6 @@
 <script lang="ts">
+  import BudouX from './BudouX.svelte';
+
   type Props = {
     prev?: {
       path: string;
@@ -18,12 +20,12 @@
     {#if prev}
       <a
         href={prev.path}
-        class="font-heading flex h-full p-2 font-heading-light text-sm leading-5 text-white transition hover:bg-gray-500/40"
+        class="flex h-full p-2 font-heading font-heading-light text-sm leading-5 text-white transition hover:bg-gray-500/40"
       >
         <div class="inline-block h-full w-6 pl-[9px] pr-[12px]">
           <img src="/white-cube.svg" alt="next article" class="inline align-middle" />
         </div>
-        {prev.title}</a
+        <BudouX text={prev.title} /></a
       >
     {/if}
   </div>
@@ -32,9 +34,9 @@
     {#if next}
       <a
         href={next.path}
-        class="items-right font-heading flex h-full p-2 font-heading-light text-sm leading-5 text-white transition hover:bg-gray-500/40"
+        class="items-right flex h-full p-2 font-heading font-heading-light text-sm leading-5 text-white transition hover:bg-gray-500/40"
       >
-        {next.title}
+        <BudouX text={next.title} />
         <div class="inline-block h-full w-6 pl-[12px] pr-[9px]">
           <img src="/white-cube.svg" alt="next article" class="inline align-middle" />
         </div>

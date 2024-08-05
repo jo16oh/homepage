@@ -1,5 +1,6 @@
 <script lang="ts">
   import BottomNav from '$lib/Components/BottomNav.svelte';
+  import BudouX from '$lib/Components/BudouX.svelte';
   import Tag from '$lib/Components/Tag.svelte';
   import type { BlogPost } from '$lib/MarkdownRetriever';
 
@@ -16,10 +17,8 @@
     .replace(/\//g, '-')}
 </div>
 
-<h1
-  class="break-words text-justify font-heading-light text-3xl font-normal tracking-wide text-white"
->
-  {data.doc.title}
+<h1 class="font-heading-light text-3xl font-normal tracking-wide text-white">
+  <BudouX text={data.doc.title} />
 </h1>
 
 <div class="w-fill ml-4 mt-6 flex px-2">

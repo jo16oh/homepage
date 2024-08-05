@@ -40,8 +40,8 @@
   },
   "type": "module",
   "dependencies": {
+    "budoux": "^0.6.2",
     "gray-matter": "^4.0.3",
-    "marked": "^13.0.3",
-    "webfontloader": "^1.6.28"
+    "marked": "^13.0.3"
   }
 }

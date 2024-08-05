@@ -2,41 +2,35 @@
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
+		fontFamily: {
+			main: [
+				'Helvetica',
+				'Roboto',
+				'Arial',
+				'"YuGothic Medium"',
+				'"Yu Gothic Medium"',
+				'"Hiragino Kaku Gothic ProN W3"',
+				'"Noto Sans JP Regular"'
+			],
+			'heading-light': [
+				'"Courier Prime Regular"',
+				'"YuGothic Medium"',
+				'"Yu Gothic Medium"',
+				'"Hiragino Kaku Gothic ProN W3"',
+				'"Noto Sans JP Regular"'
+			],
+			'heading-bold': [
+				'"Courier Prime SemiBold"',
+				'"YuGothic Bold"',
+				'"Yu Gothic Bold"',
+				'"Hiragino Kaku Gothic ProN W6"',
+				'"Noto Sans JP Medium"'
+			]
+		},
 		extend: {
 			textColor: {
 				white: '#F5F5F5',
 				black: '#242424'
-			},
-			fontFamily: {
-				main: [
-					'sans-serif',
-					'YuGothic',
-					'Yu Gothic',
-					'Hiragino Kaku Gothic ProN',
-					'ヒラギノ角ゴ ProN W3',
-					'ＭＳ ゴシック',
-					'sans-serif'
-				],
-				heading: [
-					'Courier',
-					'Courier New',
-					'YuGothic',
-					'Yu Gothic',
-					'Hiragino Kaku Gothic ProN',
-					'ヒラギノ角ゴ ProN W3',
-					'ＭＳ ゴシック',
-					'monospace'
-				],
-				'heading-light': [
-					'Courier',
-					'Courier New',
-					'YuGothic',
-					'Yu Gothic',
-					'Hiragino Kaku Gothic ProN',
-					'ヒラギノ角ゴ ProN W3',
-					'ＭＳ ゴシック',
-					'monospace'
-				]
 			}
 		}
 	},

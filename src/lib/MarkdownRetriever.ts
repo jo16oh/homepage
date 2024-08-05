@@ -100,7 +100,7 @@ const blogs: BlogPost[] = fs
 			tags: tags || []
 		};
 	})
-	.sort((a, b) => a.created_at.getTime() - b.created_at.getTime())
+	.sort((a, b) => b.created_at.getTime() - a.created_at.getTime())
 	.map((e, index, array) => {
 		const prev = array[index - 1];
 		const next = array[index + 1];
@@ -137,13 +137,13 @@ const tags: Map<string, string[]> = (() => {
 	const tags: { [key: string]: string[] } = {};
 
 	for (const blog of blogs) {
-		blog.tags.forEach((tag) => {
+		for (const tag of blog.tags) {
 			if (tag in tags) {
 				tags[tag].push(blog.fileName);
 			} else {
 				tags[tag] = [blog.fileName];
 			}
-		});
+		}
 	}
 
 	return new Map(Object.entries(tags));

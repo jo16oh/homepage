@@ -1,5 +1,6 @@
 <script lang="ts">
 	import BottomNav from '$lib/Components/BottomNav.svelte';
+	import Tag from '$lib/Components/Tag.svelte';
 	import type { BlogPost } from '$lib/MarkdownRetriever';
 
 	let { data }: { data: { doc: BlogPost; html: string } } = $props();
@@ -9,26 +10,25 @@
 	<title>{data.doc.title}</title>
 </svelte:head>
 
-<div class="font-heading-light text-sm text-white">
+<div class="pb-2 font-heading-light text-sm text-white">
 	{new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' })
 		.format(data.doc.created_at)
 		.replace(/\//g, '-')}
 </div>
 
-<h1 class="font-sans text-3xl text-white">
+<h1
+	class="break-words text-justify font-heading-light text-3xl font-normal tracking-wide text-white"
+>
 	{data.doc.title}
 </h1>
 
 <div class="w-fill ml-4 mt-6 flex px-2">
-	<div class="h-fill min-w-16 font-heading-light text-sm leading-5 text-white">tags :</div>
+	<div class="my-auto mt-2 h-full min-w-16 font-heading-light text-sm leading-5 text-white">
+		tags :
+	</div>
 	<div class="inline-flex flex-row flex-wrap items-start justify-start">
 		{#each data.doc.tags as tag}
-			<a
-				href={'/blog/tag/' + tag}
-				class="mr-3 mt-1 inline-block rounded-md bg-gray-500/40 px-2 font-heading-light text-sm text-white"
-			>
-				{tag}
-			</a>
+			<Tag name={tag} />
 		{/each}
 	</div>
 </div>

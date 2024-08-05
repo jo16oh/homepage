@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Tag from '$lib/Components/Tag.svelte';
 	import type { BlogPost } from '$lib/MarkdownRetriever';
 
 	let { data }: { data: { blogs: BlogPost[] } } = $props();
@@ -24,13 +25,9 @@
 			class="w-fit px-2 font-main text-2xl text-white transition hover:bg-gray-500/40"
 			>{blog.title}</a
 		>
-		<div class="flex flex-row flex-wrap items-start justify-end">
+		<div class="mt-4 flex flex-row flex-wrap items-start justify-end">
 			{#each blog.tags as tag}
-				<a
-					href={'/blog/tag/' + tag}
-					class="mr-3 mt-4 inline rounded-md bg-gray-500/40 px-2 font-heading-light text-sm text-white transition hover:bg-gray-100/40"
-					>{tag}</a
-				>
+				<Tag name={tag} />
 			{/each}
 		</div>
 	</div>

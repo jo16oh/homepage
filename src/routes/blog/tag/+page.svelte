@@ -8,7 +8,7 @@
 		.sort((a, b) => b[1].length - a[1].length);
 </script>
 
-<h1 class="h-14 p-2 font-heading text-3xl font-bold text-white">tags</h1>
+<h1 class="font-heading-bold h-14 p-2 text-3xl text-white">tags</h1>
 
 <div class="w-fill flex px-2">
 	<div class="inline-flex flex-row flex-wrap items-start justify-start">

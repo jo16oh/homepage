@@ -14,11 +14,15 @@ export function entries() {
 }
 
 export async function load({ params }: { params: { slug: string } }) {
-	const entries = MarkdownRetriever.tags.get(params.slug);
-	if (!entries) throw new Error('Tag not found!');
+	const blogPaths = MarkdownRetriever.tags.get(params.slug);
+	if (!blogPaths) throw new Error('Tag not found!');
+
+	const blogs = blogPaths
+		.map((path) => MarkdownRetriever.blog.get(path))
+		.filter((post) => post !== undefined);
 
 	return {
 		tagName: params.slug,
-		entries: entries
+		blogs: blogs
 	};
 }

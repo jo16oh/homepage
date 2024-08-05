@@ -1,87 +1,91 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
-	<style>
-		@font-face {
-			font-family: 'Courier Prime Regular';
-			src: url('/CourierPrime.woff2') format('woff2');
-			font-weight: 400;
-			font-style: normal;
-		}
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preload" type="font" href="/CourierPrime.woff2" />
+    <link rel="preload" type="font" href="/CourierPrime-SemiBold.woff2" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
+  <style>
+    @font-face {
+      font-family: 'Courier Prime Regular';
+      src: url('/CourierPrime.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
 
-		@font-face {
-			font-family: 'YuGothic Medium';
-			src: local('YuGothic');
-			src: local('游ゴシック体');
-			font-weight: 500;
-			font-style: normal;
-		}
+    @font-face {
+      font-family: 'YuGothic Medium';
+      src: local('YuGothic');
+      src: local('游ゴシック体');
+      font-weight: 500;
+      font-style: normal;
+    }
 
-		@font-face {
-			font-family: 'Yu Gothic Medium';
-			src: local('Yu Gothic');
-			src: local('游ゴシック');
-			font-weight: 500;
-			font-style: normal;
-		}
+    @font-face {
+      font-family: 'Yu Gothic Medium';
+      src: local('Yu Gothic');
+      src: local('游ゴシック');
+      font-weight: 500;
+      font-style: normal;
+    }
 
-		@font-face {
-			font-family: 'Hiragino Kaku Gothic ProN W3';
-			src: local('Hiragino Kaku Gothic ProN');
-			font-weight: 300;
-			font-style: normal;
-		}
+    @font-face {
+      font-family: 'Hiragino Kaku Gothic ProN W3';
+      src: local('Hiragino Kaku Gothic ProN');
+      font-weight: 300;
+      font-style: normal;
+    }
 
-		@font-face {
-			font-family: 'Noto Sans JP Regular';
-			src: local('Noto Sans JP');
-			font-weight: 400;
-			font-style: normal;
-		}
+    @font-face {
+      font-family: 'Noto Sans JP Regular';
+      src: local('Noto Sans JP');
+      font-weight: 400;
+      font-style: normal;
+    }
 
-		@font-face {
-			font-family: 'Courier Prime SemiBold';
-			src: url('/CourierPrime-SemiBold.woff2') format('woff2');
-			font-weight: 600;
-			font-style: normal;
-		}
+    @font-face {
+      font-family: 'Courier Prime SemiBold';
+      src: url('/CourierPrime-SemiBold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: block;
+    }
 
-		@font-face {
-			font-family: 'YuGothic Bold';
-			src: local('YuGothic');
-			src: local('游ゴシック体');
-			font-weight: 700;
-			font-style: normal;
-		}
+    @font-face {
+      font-family: 'YuGothic Bold';
+      src: local('YuGothic');
+      src: local('游ゴシック体');
+      font-weight: 700;
+      font-style: normal;
+    }
 
-		@font-face {
-			font-family: 'Yu Gothic Bold';
-			src: local('Yu Gothic');
-			src: local('游ゴシック');
-			font-weight: 700;
-			font-style: normal;
-		}
+    @font-face {
+      font-family: 'Yu Gothic Bold';
+      src: local('Yu Gothic');
+      src: local('游ゴシック');
+      font-weight: 700;
+      font-style: normal;
+    }
 
-		@font-face {
-			font-family: 'Hiragino Kaku Gothic ProN W6';
-			src: local('Hiragino Kaku Gothic ProN');
-			font-weight: 600;
-			font-style: normal;
-		}
+    @font-face {
+      font-family: 'Hiragino Kaku Gothic ProN W6';
+      src: local('Hiragino Kaku Gothic ProN');
+      font-weight: 600;
+      font-style: normal;
+    }
 
-		@font-face {
-			font-family: 'Noto Sans JP Medium';
-			src: local('Noto Sans JP');
-			font-weight: 500;
-			font-style: normal;
-		}
-	</style>
+    @font-face {
+      font-family: 'Noto Sans JP Medium';
+      src: local('Noto Sans JP');
+      font-weight: 500;
+      font-style: normal;
+    }
+  </style>
 </html>

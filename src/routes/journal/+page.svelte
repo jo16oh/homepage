@@ -36,7 +36,7 @@
         <div class="ml-[50px] h-full w-full border-l-2 border-l-white">
           <a
             href={'journal/' + journal.title}
-            class="ml-12 flex h-full w-fit p-2 font-heading-bold text-lg leading-5 text-red-50 transition hover:bg-gray-500/40"
+            class="ml-12 flex h-full w-fit p-2 font-heading-light text-lg leading-5 text-red-50 transition hover:bg-gray-500/40"
           >
             <div class="ml-2 mr-5 inline-block h-1.5 w-1.5 align-middle">
               <Cube />

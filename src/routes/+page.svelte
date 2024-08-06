@@ -1,6 +1,7 @@
 <script>
   import Fade from '$lib/Components/Fade.svelte';
   import Fly from '$lib/Components/Fly.svelte';
+  import Search from '$lib/Components/icons/Search.svelte';
 
   const paths = ['blog', 'journal', 'photography', 'about'];
   const style =
@@ -19,6 +20,8 @@
     </Fly>
   {/each}
   <Fly params={{ delay: 100 * (paths.length + 1) }}>
-    <button class="transition hover:bg-gray-500/40"> <img src="/search.svg" alt="search" /></button>
+    <button class="h-10 w-10 px-2 py-1 text-red-50 transition hover:bg-gray-500/40"
+      ><Search /></button
+    >
   </Fly>
 </div>

@@ -7,7 +7,7 @@ const extension: MarkedExtension = {
     heading(token) {
       const text = this.parser.parseInline(token.tokens);
       const level = token.depth;
-      const common = 'text-white font-main font-bold py-1 mt-8 border-b-2 my-6 w-fit';
+      const common = 'text-red-50 font-main font-bold py-1 mt-8 border-b-2 my-6 w-fit';
 
       if (level === 1) {
         return `<h1 class="text-3xl  ${common}">${text}</h1>`;
@@ -27,16 +27,16 @@ const extension: MarkedExtension = {
     },
     paragraph(token) {
       const text = this.parser.parseInline(token.tokens);
-      return `<p class='text-white text-base leading-7 font-main pb-5 '>${text}</p>`;
+      return `<p class='text-red-50 text-base leading-7 font-main pb-5 '>${text}</p>`;
     },
     link(token) {
       return `<a href=${token.href} class="text-sky-300 hover:underline">${token.text}</a>`;
     },
     code(token) {
-      return `<pre class="text-white bg-gray-800/40 rounded-lg p-4 font-mono"><code>${token.text}</code></pre>`;
+      return `<pre class="text-red-50 bg-gray-800/40 rounded-lg p-4 font-mono"><code>${token.text}</code></pre>`;
     },
     codespan(token) {
-      return `<code class="text-white bg-gray-800/40 rounded-md px-2 py-1 font-mono">${token.text}</code>`;
+      return `<code class="text-red-50 bg-gray-800/40 rounded-md px-2 py-1 font-mono">${token.text}</code>`;
     }
   }
 };

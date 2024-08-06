@@ -4,11 +4,11 @@
 
   const paths = ['blog', 'journal', 'photography', 'about'];
   const style =
-    'text-2xl text-white font-heading-bold hover:bg-gray-500/40 transition inline-block w-full m-0';
+    'text-2xl text-red-50 font-heading-bold hover:bg-gray-500/40 transition inline-block w-full m-0';
 </script>
 
 <Fade>
-  <h1 class="h-14 p-2 font-heading-bold text-3xl text-white">jo16oh.dev</h1>
+  <h1 class="h-14 p-2 font-heading-bold text-3xl text-red-50">jo16oh.dev</h1>
 </Fade>
 <div class="h-[70px]"></div>
 

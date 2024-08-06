@@ -26,12 +26,6 @@ export default {
         '"Hiragino Kaku Gothic ProN W6"',
         '"Noto Sans JP Medium"'
       ]
-    },
-    extend: {
-      textColor: {
-        white: '#F5F5F5',
-        black: '#242424'
-      }
     }
   },
   plugins: []

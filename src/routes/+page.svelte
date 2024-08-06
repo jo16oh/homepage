@@ -4,7 +4,7 @@
 
   const paths = ['blog', 'journal', 'photography', 'about'];
   const style =
-    'text-2xl text-red-50 font-heading-bold hover:bg-gray-500/40 transition inline-block w-full m-0';
+    'text-2xl text-red-50 font-heading-bold hover:bg-gray-500/40 transition inline-block w-full py-1 px-2';
 </script>
 
 <Fade>
@@ -12,7 +12,7 @@
 </Fade>
 <div class="h-[70px]"></div>
 
-<div class="grid grid-cols-1 gap-[30px] pl-[40px]">
+<div class="ml-8 grid grid-cols-1 gap-6">
   {#each paths as path, i}
     <Fly params={{ delay: 100 * (i + 1) }}>
       <a href={'/' + path} class={style}>{path}</a>

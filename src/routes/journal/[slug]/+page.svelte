@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-  <title>{data.doc.title}</title>
+  <title>{data.doc.title + " | jo16oh.dev"}</title>
 </svelte:head>
 
 <Fade params={{ duration: 100 }}>

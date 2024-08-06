@@ -7,6 +7,10 @@
   let { data }: { data: { tagName: string; blogs: BlogPost[] } } = $props();
 </script>
 
+<svelte:head>
+  <title>{'#' + data.tagName + ' | jo16oh.dev'}</title>
+</svelte:head>
+
 <Fade>
   <div class="flex">
     <div class="h-14 p-2 font-main text-3xl font-bold text-red-50">#</div>

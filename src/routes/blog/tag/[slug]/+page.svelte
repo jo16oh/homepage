@@ -18,7 +18,7 @@
   </div>
 </Fade>
 
-<div class="ml-8">
+<div>
   {#each data.blogs as blog, i}
     <Fly params={{ delay: 50 * (i + 1) }}>
       <BlogLinkCard {blog} />

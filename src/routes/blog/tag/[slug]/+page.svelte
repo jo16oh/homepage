@@ -9,8 +9,8 @@
 
 <Fade>
   <div class="flex">
-    <div class="h-14 p-2 font-main text-3xl font-bold text-white">#</div>
-    <h1 class="h-14 p-2 font-heading-bold text-3xl text-white">{data.tagName}</h1>
+    <div class="h-14 p-2 font-main text-3xl font-bold text-red-50">#</div>
+    <h1 class="h-14 p-2 font-heading-bold text-3xl text-red-50">{data.tagName}</h1>
   </div>
 </Fade>
 

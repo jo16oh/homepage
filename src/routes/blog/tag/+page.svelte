@@ -10,7 +10,7 @@
 </script>
 
 <Fade>
-  <h1 class="h-14 p-2 font-heading-bold text-3xl text-white">tags</h1>
+  <h1 class="h-14 p-2 font-heading-bold text-3xl text-red-50">tags</h1>
 
   <div class="w-fill flex px-2">
     <div class="inline-flex flex-row flex-wrap items-start justify-start">

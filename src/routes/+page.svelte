@@ -8,9 +8,14 @@
     'text-2xl text-red-50 font-heading-bold hover:bg-gray-500/40 transition inline-block w-full py-1 px-2';
 </script>
 
+<svelte:head>
+  <title>jo16oh.dev</title>
+</svelte:head>
+
 <Fade>
   <h1 class="h-14 p-2 font-heading-bold text-3xl text-red-50">jo16oh.dev</h1>
 </Fade>
+
 <div class="h-[70px]"></div>
 
 <div class="ml-8 grid grid-cols-1 gap-6">

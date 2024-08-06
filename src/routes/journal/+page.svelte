@@ -17,6 +17,10 @@
   } = $props();
 </script>
 
+<svelte:head>
+  <title>journal | jo16oh.dev</title>
+</svelte:head>
+
 <Fade>
   <h1 class="h-14 p-2 font-heading-bold text-3xl font-bold text-red-50">journal</h1>
 </Fade>

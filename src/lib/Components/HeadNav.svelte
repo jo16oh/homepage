@@ -17,10 +17,15 @@
   <div
     class="fixed left-0 top-0 flex h-10 w-full flex-row justify-between opacity-60 max-[720px]:bg-[url('/bg-dark.webp')]"
   ></div>
-  <a href={back} class="text-red-50 w-10 h-10 p-2.5 fixed left-0 top-0 transition hover:bg-gray-500/40">
-  <Back />
-  
-  <button class="text-red-50 w-10 h-10 p-2.5 fixed right-0 top-0 transition hover:bg-gray-500/40">
-    <Search /></button
+
+  <a
+    href={back}
+    class="fixed left-0 top-0 h-10 w-10 p-2.5 text-red-50 transition hover:bg-gray-500/40"
   >
+    <Back />
+  </a>
+
+  <button class="fixed right-0 top-0 h-10 w-10 p-2.5 text-red-50 transition hover:bg-gray-500/40">
+    <Search />
+  </button>
 {/if}

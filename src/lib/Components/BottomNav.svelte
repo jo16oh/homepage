@@ -1,5 +1,6 @@
 <script lang="ts">
   import BudouX from './BudouX.svelte';
+  import Cube from './icons/Cube.svelte';
 
   type Props = {
     prev?: {
@@ -22,8 +23,8 @@
         href={prev.path}
         class="font-heading flex h-full p-2 font-heading-light text-sm leading-5 text-red-50 transition hover:bg-gray-500/40"
       >
-        <div class="inline-block h-full w-6 pl-[9px] pr-[12px]">
-          <img src="/white-cube.svg" alt="next article" class="inline align-middle" />
+        <div class="ml-[12px] mr-[9px] inline-block h-1 w-1 align-middle">
+          <Cube />
         </div>
         <BudouX text={prev.title} /></a
       >
@@ -37,8 +38,8 @@
         class="items-right font-heading flex h-full p-2 font-heading-light text-sm leading-5 text-red-50 transition hover:bg-gray-500/40"
       >
         <BudouX text={next.title} />
-        <div class="inline-block h-full w-6 pl-[12px] pr-[9px]">
-          <img src="/white-cube.svg" alt="next article" class="inline align-middle" />
+        <div class="ml-[12px] mr-[9px] inline-block h-1 w-1 align-middle">
+          <Cube />
         </div>
       </a>
     {/if}

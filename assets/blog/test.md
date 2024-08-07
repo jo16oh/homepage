@@ -70,8 +70,7 @@ _You **can** combine them_
 
 ## Images
 
-<!-- ![This is an alt text.](../images/IMG_0286.jpg 'This is a sample image.') -->
-Amazing image:
+![Look at this image](../images/IMG_0286.jpg)
 ![Look at this image](../images/IMG_0286.jpg)
 
 
@@ -95,7 +94,7 @@ You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
 
 ## Blocks of code
 
-```
+```js
 let message = 'Hello world';
 alert(message);
 ```

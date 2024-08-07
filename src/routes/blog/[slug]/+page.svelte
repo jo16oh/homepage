@@ -2,6 +2,7 @@
   import BottomNav from '$lib/Components/BottomNav.svelte';
   import BudouX from '$lib/Components/BudouX.svelte';
   import Fade from '$lib/Components/Fade.svelte';
+  import Markdown from '$lib/Components/Markdown.svelte';
   import Tag from '$lib/Components/Tag.svelte';
   import type { BlogPost } from '$lib/MarkdownRetriever';
 
@@ -48,9 +49,7 @@
 
   <div class="h-16 w-auto"></div>
 
-  <div class="w-auto px-1 sm:px-3">
-    {@html data.html}
-  </div>
+  <Markdown source={data.doc.content} />
 
   <div class="h-32 w-full"></div>
 

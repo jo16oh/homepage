@@ -15,7 +15,7 @@ export function entries() {
 
 export async function load({ params }: { params: { slug: string } }) {
   const doc = MarkdownRetriever.blog.get(params.slug);
-  if (!doc) throw new Error('Markdown file not found!');
+  if (!doc) throw new Error(params.slug + ' not found!');
 
   return {
     doc: {

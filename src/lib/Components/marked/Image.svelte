@@ -3,7 +3,7 @@
     ['../../../../assets/images/**/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}'],
     {
       eager: true,
-      query: { enhanced: true }
+      query: { enhanced: true, w: '1304;860' }
     }
   );
 
@@ -21,8 +21,12 @@
   let { token }: { token: Tokens.Image } = $props();
 
   const fileName = token.href.split('/').pop() || '';
-  console.log(fileName);
   const image = getImage(fileName);
 </script>
 
-<enhanced:img src={image} alt="photo" />
+<enhanced:img
+  src={image}
+  sizes="(min-width:652px) 1304px, (min-width:430px) 860px"
+  alt={token.text}
+  class="my-3"
+/>

@@ -6,6 +6,7 @@
   import CodeBlock from './marked/CodeBlock.svelte';
   import CodeSpan from './marked/CodeSpan.svelte';
   import Link from './marked/Link.svelte';
+  import Blockquote from './marked/Blockquote.svelte';
 
   let { source }: { source: string } = $props();
 </script>
@@ -18,6 +19,7 @@
     heading: Heading,
     code: CodeBlock,
     codespan: CodeSpan,
-    link: Link
+    link: Link,
+    blockquote: Blockquote
   }}
 />

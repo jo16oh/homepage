@@ -2,12 +2,13 @@
   import type { MarkdownDocument } from '$lib/MarkdownRetriever';
   import BottomNav from '$lib/Components/BottomNav.svelte';
   import Fade from '$lib/Components/Fade.svelte';
+  import Markdown from '$lib/Components/Markdown.svelte';
 
   let { data }: { data: { doc: MarkdownDocument; html: string } } = $props();
 </script>
 
 <svelte:head>
-  <title>{data.doc.title + " | jo16oh.dev"}</title>
+  <title>{data.doc.title + ' | jo16oh.dev'}</title>
 </svelte:head>
 
 <Fade params={{ duration: 100 }}>
@@ -19,7 +20,7 @@
 <Fade params={{ duration: 150 }}>
   <div class="mt-3 w-full px-2">
     <ul>
-      {#each Object.entries(data.doc.frontmatter) as obj, i}
+      {#each Object.entries(data.doc.frontmatter) as obj}
         <li class="font-heading-light text-xs leading-5 text-red-50">
           {obj[0]} ： {obj[1]}
         </li>
@@ -30,7 +31,7 @@
   <div class="h-16 w-full"></div>
 
   <div class="w-full px-1 sm:px-3">
-    {@html data.html}
+    <Markdown source={data.doc.content} />
   </div>
 
   <div class="h-32 w-full"></div>

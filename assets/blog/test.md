@@ -70,7 +70,10 @@ _You **can** combine them_
 
 ## Images
 
-<!-- ![This is an alt text.](/image/sample.webp 'This is a sample image.') -->
+<!-- ![This is an alt text.](../images/IMG_0286.jpg 'This is a sample image.') -->
+Amazing image:
+![Look at this image](../images/IMG_0286.jpg)
+
 
 ## Links
 

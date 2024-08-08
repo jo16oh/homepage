@@ -25,7 +25,10 @@
     <Back />
   </a>
 
-  <button class="fixed right-0 top-0 h-10 w-10 p-2.5 text-red-50 transition hover:bg-gray-500/40">
+  <button
+    aria-label="search"
+    class="fixed right-0 top-0 h-10 w-10 p-2.5 text-red-50 transition hover:bg-gray-500/40"
+  >
     <Search />
   </button>
 {/if}

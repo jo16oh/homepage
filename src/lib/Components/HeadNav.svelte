@@ -20,6 +20,7 @@
 
   <a
     href={back}
+    aria-label="back"
     class="fixed left-0 top-0 h-10 w-10 p-2.5 text-red-50 transition hover:bg-gray-500/40"
   >
     <Back />

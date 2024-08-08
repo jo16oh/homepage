@@ -25,8 +25,9 @@
     </Fly>
   {/each}
   <Fly params={{ delay: 100 * (paths.length + 1) }}>
-    <button class="h-10 w-10 px-2 py-1 text-red-50 transition hover:bg-gray-500/40"
-      ><Search /></button
+    <button
+      aria-label="search"
+      class="h-10 w-10 px-2 py-1 text-red-50 transition hover:bg-gray-500/40"><Search /></button
     >
   </Fly>
 </div>

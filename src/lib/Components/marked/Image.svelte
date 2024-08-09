@@ -3,7 +3,7 @@
     ['../../../../assets/images/**/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}'],
     {
       eager: true,
-      query: { enhanced: true, w: '1304;860' }
+      query: { enhanced: true, w: '1956;1304;1290;860;652;430' }
     }
   );
 
@@ -26,7 +26,8 @@
 
 <enhanced:img
   src={image}
-  sizes="(min-width:652px) 1304px, (min-width:430px) 860px"
+  sizes="(min-width: 652px) 652px, 
+         (max-width: 430px) 430px"
   alt={token.text}
   class="my-3"
 />

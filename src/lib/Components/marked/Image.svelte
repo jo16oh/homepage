@@ -27,7 +27,7 @@
 <enhanced:img
   src={image}
   sizes="(min-width: 652px) 652px, 
-         (max-width: 430px) 430px"
+         (max-width: 429px) 430px, 652px"
   alt={token.text}
   class="my-3"
 />

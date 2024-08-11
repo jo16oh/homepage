@@ -1,7 +1,8 @@
 <script lang="ts">
-import type { Tokens } from 'marked'
+  import type { Tokens } from 'marked';
 
-let { token }: { token: Tokens.Codespan } = $props();
+  let { token }: { token: Tokens.Codespan } = $props();
+  const text = token.raw.slice(1, -1);
 </script>
 
-<code class="text-red-50 bg-gray-800/40 rounded-md px-2 py-1 font-mono">${token.text}</code>
+<code class="font-mono rounded-md bg-gray-800/40 px-2 py-1 text-red-50">{text}</code>

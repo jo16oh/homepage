@@ -1,7 +1,6 @@
 <script lang="ts">
   import BlogLinkCard from '$lib/Components/BlogLinkCard.svelte';
   import Fade from '$lib/Components/Fade.svelte';
-  import Fly from '$lib/Components/Fly.svelte';
   import type { BlogPost } from '$lib/MarkdownRetriever';
 
   let { data }: { data: { blogs: BlogPost[] } } = $props();
@@ -22,7 +21,7 @@
 </Fade>
 
 {#each data.blogs as blog, i}
-  <Fly params={{ delay: 50 * (i + 1) }}>
+  <Fade params={{ delay: 50 * (i + 1) }}>
     <BlogLinkCard {blog} />
-  </Fly>
+  </Fade>
 {/each}

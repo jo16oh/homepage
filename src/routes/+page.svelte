@@ -1,6 +1,5 @@
 <script>
   import Fade from '$lib/Components/Fade.svelte';
-  import Fly from '$lib/Components/Fly.svelte';
   import Search from '$lib/Components/icons/Search.svelte';
 
   const paths = ['blog', 'journal', 'photography', 'about'];
@@ -20,14 +19,14 @@
 
 <div class="ml-8 grid grid-cols-1 gap-6">
   {#each paths as path, i}
-    <Fly params={{ delay: 100 * (i + 1) }}>
+    <Fade params={{ delay: 100 * (i + 1) }}>
       <a href={'/' + path} class={style}>{path}</a>
-    </Fly>
+    </Fade>
   {/each}
-  <Fly params={{ delay: 100 * (paths.length + 1) }}>
+  <Fade params={{ delay: 100 * (paths.length + 1) }}>
     <button
       aria-label="search"
       class="h-10 w-10 px-2 py-1 text-red-50 transition hover:bg-gray-500/40"><Search /></button
     >
-  </Fly>
+  </Fade>
 </div>

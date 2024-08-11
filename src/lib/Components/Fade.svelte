@@ -1,20 +1,13 @@
 <script lang="ts">
-  import { onMount, type Snippet } from 'svelte';
-  import { fade, type FadeParams } from 'svelte/transition';
-
-  type Props = { params?: FadeParams; children: Snippet };
+  import type { Snippet } from 'svelte';
+  type Props = { params?: { duration?: number; delay?: number }; children: Snippet };
 
   let { params = { duration: 300, delay: 0 }, children }: Props = $props();
-
-  let loaded = $state(false);
-
-  onMount(() => {
-    loaded = true;
-  });
 </script>
 
-{#if loaded}
-  <div transition:fade={params} class="h-fit w-full">
-    {@render children()}
-  </div>
-{/if}
+<div
+  class="h-fit w-full animate-fadeIn"
+  style={`opacity: 0; animation-duration: ${params.duration}ms; animation-delay: ${params.delay}ms;`}
+>
+  {@render children()}
+</div>

@@ -11,13 +11,13 @@
   <title>{data.doc.title + ' | jo16oh.dev'}</title>
 </svelte:head>
 
-<Fade params={{ duration: 100 }}>
+<Fade>
   <h1 class="font-heading-bold text-3xl font-bold text-red-50">
     {data.doc.fileName}
   </h1>
 </Fade>
 
-<Fade params={{ duration: 150 }}>
+<Fade>
   <div class="mt-3 w-full px-2">
     <ul>
       {#each Object.entries(data.doc.frontmatter) as obj}
